@@ -1,11 +1,15 @@
 import React from 'react'
 import {
-    StyledContainer
+    StyledContainer,
+    StyledNavButton
 } from './styles'
 
 function Header() {
     return (
-        <StyledContainer>header</StyledContainer>
+        <StyledContainer>
+            <StyledNavButton>projects</StyledNavButton>
+            <StyledNavButton>contact</StyledNavButton>
+        </StyledContainer>
     )
 }
 
