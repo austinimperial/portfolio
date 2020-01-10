@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from 'components/header/index'
+import Intro from 'components/intro/index'
+import Skills from 'components/skills/index'
+import Projects from 'components/projects/index'
+import Contact from 'components/contact/index'
+import Footer from 'components/footer/index'
+import { ThemeProvider } from 'styled-components'
+import mainTheme from 'styles/mainTheme'
+import { StyledAppContainer } from './styles/AppStyles'
+import ScreenSizesProvider from 'globalState/screenSizes'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   return (
+      <ThemeProvider theme={mainTheme}>
+      <ScreenSizesProvider>
+         <StyledAppContainer>
+            <Header />
+            <Intro />
+            <Skills />
+            <Projects />
+            <Contact />
+            <Footer />
+         </StyledAppContainer>
+      </ScreenSizesProvider>
+      </ThemeProvider>
   );
 }
 
