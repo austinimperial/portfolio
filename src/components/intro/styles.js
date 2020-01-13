@@ -7,38 +7,39 @@ export const StyledContainer = styled.div`
     border: 1px solid white;
 `
 
-export const StyledColumn = styled.div`
-    //border: 1px solid white;
-    display: flex;
-    flex-direction: column
-    justify-content: center
-
-    ${props => props.left && `
-        flex-basis: 60%;
-    `}
-
-    ${props => props.right && `
-        flex-basis: 40%;
-    `}
-`
-
-export const StyledRow = styled.div`
-    //border: 1px solid white;
-    display: flex;
-    justify-content: center;
-`
-
-export const StyledNameIntro = styled.p`
+export const StyledBigText = styled.p`
     font-family: Montserrat;
     font-weight: 900;
     font-size: 60px;
     margin: 0;
     text-shadow: 5px 5px #00595c;
+
+    ${props => props.highlighted && `
+        color: white;
+    `}
+`
+
+export const StyledBigTextSpan = styled.span`
+    color: white;
 `
 
 export const StyledBlurb = styled.p`
     font-family: Montserrat;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
+`
+
+export const StyledResumeButton = styled.button`
+    appearance: none;
+    border-radius: 20px;
+    border: 1px solid ${props => props.theme.textMain};
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    min-width: 0;
+    color: ${props => props.theme.textMain};
+    padding: 5px 15px 5px 15px;
+    margin: 10px 0px 0px 0px;
 `

@@ -1,0 +1,36 @@
+.regular {
+        fill: #00ecf0;
+        height: 40px;
+        margin: 0px 10px 0px 10px;
+        transition: all 0.27s ease
+}
+
+.regular:hover {
+        fill: white;
+        height: 60px;
+}
+
+.styledComponents {
+        fill: #00ecf0;
+        height: 60px;
+        margin: 0px 10px 0px 10px;
+        transition: all 0.27s ease
+}
+
+.styledComponents:hover {
+        fill: white;
+        height: 90px;
+}
+
+.jwt {
+        margin: 0px 10px 0px 10px;
+        fill: #00ecf0;
+        height: 30px;
+        width: 60px;
+        transition: all 0.27s ease
+}
+
+.jwt:hover {
+        fill: white;
+        width: 80px;
+}

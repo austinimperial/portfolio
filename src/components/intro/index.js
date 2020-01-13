@@ -1,33 +1,32 @@
 import React from 'react'
+import { Col } from 'components/layout/index'
+import AustinLogo from 'components/intro/AustinLogo'
 import {
     StyledContainer,
-    StyledColumn,
-    StyledRow,
-    StyledNameIntro,
-    StyledBlurb
+    StyledBigText,
+    StyledBlurb,
+    StyledBigTextSpan,
+    StyledResumeButton
 } from './styles'
 import blurb from './blurb'
 
 function Intro() {
     return (
         <StyledContainer>
-            <StyledColumn left >
-                <StyledRow>
-                    <StyledColumn>
-                        <StyledNameIntro>
-                            Hello! I'm Austin
-                        </StyledNameIntro>
-                        <StyledBlurb>
-                            {blurb}
-                        </StyledBlurb>                        
-                    </StyledColumn>
-                </StyledRow>
-            </StyledColumn>
-            <StyledColumn right >
-                <StyledRow>
-                    <p>row1</p>
-                </StyledRow>
-            </StyledColumn>
+            <Col style={{'flexBasis':'60%','padding':'0% 5% 0% 10%'}} center >
+                <StyledBigText>
+                    Hello! I'm <StyledBigTextSpan>Austin</StyledBigTextSpan>
+                </StyledBigText>
+                <StyledBlurb>
+                    {blurb}
+                </StyledBlurb>
+                <div style={{'display':'flex'}}>
+                    <StyledResumeButton>resume</StyledResumeButton>
+                </div>
+            </Col>
+            <Col style={{'flexBasis':'40%'}} center >
+                <AustinLogo height="200px" />
+            </Col>
         </StyledContainer>
     )
 }
