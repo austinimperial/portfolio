@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import {
     StyledContainer,
-    StyledHeader,
     StyledRegText,
     StyledSkillLabel
 } from './styles'
+import { StyledHeader } from 'components/shared/sharedStyles'
 import {Col} from 'components/layout/index'
 import SkillIcons from 'components/skills/skillIcons/index'
 

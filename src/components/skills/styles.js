@@ -7,15 +7,6 @@ export const StyledContainer = styled.div`
     border: 1px solid white;
 `
 
-export const StyledHeader = styled.p`
-    font-family: Montserrat;
-    font-weight: 900;
-    font-size: 60px;
-    margin: 0;
-    color: white;
-    text-align: center;
-`
-
 export const StyledRegText = styled.p`
     font-family: Montserrat;
     font-weight: 500;
