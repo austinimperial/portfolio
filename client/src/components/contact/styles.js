@@ -36,6 +36,11 @@ export const StyledTextArea = styled.textarea`
         width: 100%;
         height: 200px;
     `}
+
+    --invalid-color: ${props => props.theme.danger};
+    ${props => props.invalid && `
+    border: 1px solid var(--invalid-color)
+    `}
 `
 
 export const StyledTextAreaLabel = styled.label`
@@ -44,6 +49,11 @@ export const StyledTextAreaLabel = styled.label`
     font-size: 12px;
     margin: 5px 0px 5px 0px;
     color: ${props => props.theme.textMain};
+
+    --invalid-color: ${props => props.theme.danger};
+    ${props => props.invalid && `
+        color: var(--invalid-color)
+    `}
 `
 
 export const StyledSendButton = styled.button`

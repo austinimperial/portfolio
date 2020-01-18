@@ -9,19 +9,22 @@ import { ThemeProvider } from 'styled-components'
 import mainTheme from 'styles/mainTheme'
 import { StyledAppContainer } from './styles/AppStyles'
 import ScreenSizesProvider from 'globalState/screenSizes'
+import ContactFormProvider from 'globalState/contactForm/index'
 
 function App() {
    return (
       <ThemeProvider theme={mainTheme}>
       <ScreenSizesProvider>
-         <StyledAppContainer>
-            <Header />
-            <Intro />
-            <Skills />
-            <Projects />
-            <Contact />
-            <Footer />
-         </StyledAppContainer>
+      <ContactFormProvider>
+            <StyledAppContainer>
+               <Header />
+               <Intro />
+               <Skills />
+               <Projects />
+               <Contact />
+               <Footer />
+            </StyledAppContainer>
+      </ContactFormProvider>
       </ScreenSizesProvider>
       </ThemeProvider>
   );

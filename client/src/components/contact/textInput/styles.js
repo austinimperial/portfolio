@@ -7,7 +7,7 @@ export const StyledInput = styled.input`
     color: white;
     appearence: none;
     border: 0px;
-    border-bottom: 1px solid ${props => props.theme.textMain};
+    border-bottom: 1px solid ${props => props.invalid ? props.theme.danger : props.theme.textMain};
     background-color: transparent;
     outline: none;
     z-index: 1;
@@ -26,6 +26,11 @@ export const StyledLabel = styled.label`
     color: ${props => props.theme.textMain};
     transition: top 0.1s ease-in-out;
     box-sizing: border-box;
+
+    --invalid-color: ${props => props.theme.danger};
+    ${props => props.invalid && `
+        color: var(--invalid-color);
+    `}
 
     ${props => props.isClicked && `
         top: -49px;

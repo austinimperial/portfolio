@@ -3,18 +3,12 @@ const nodemailer = require('nodemailer');
 const router = express.Router()
 const Joi = require('joi')
 require('dotenv').config()
+const joiEmailSchema = require('../models/joiEmailSchema')
 
-const JoiEmailSchema = Joi.object({
-    name: Joi.string().min(1).max(1000).required(),
-    email: Joi.string().min(1).max(1000).email().required(),
-    subject: Joi.string().min(1).max(1000).required(),
-    message: Joi.string().min(1).max(100000).required()
-})
+router.post('/', async (req,res) => {
 
-router.get('/', async (req,res) => {
-
-    const {error} = Joi.validate(req.body,JoiEmailSchema)
-    if (error) return res.sendStatus(400)
+    const {error} = Joi.validate(req.body,joiEmailSchema)
+    if (error) return res.sendStatu(400)
 
     const {name,email,subject,message} = req.body
     
@@ -29,11 +23,11 @@ router.get('/', async (req,res) => {
     const mailOptions = {
         from: `${process.env.contact_email_user}`,
         to: `${process.env.contact_email_destination}`,
-        subject: subject,
+        subject: subject.text,
         text: `
-            name: ${name} 
-            email: ${email} 
-            message: ${message}
+            name: ${name.text} 
+            email: ${email.text} 
+            message: ${message.text}
         `
     };
 
