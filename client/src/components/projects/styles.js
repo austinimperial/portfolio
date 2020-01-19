@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
     display: flex;
-    height: 100vh;
+    height: 90vh;
+    min-height: 400px;
     color: ${props => props.theme.textMain};
-    border: 1px solid white;
 `
 
 export const StyledProjectCardContainer = styled.div`

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { Col } from 'components/layout/index'
 import TextInput from 'components/contact/textInput/index'
 import {
@@ -13,27 +13,38 @@ import fetchContactEmail from 'services/fetchContactEmail'
 import { StyledHeader } from 'components/shared/sharedStyles'
 import { ScreenSizesContext } from 'globalState/screenSizes/index'
 import { ContactFormContext } from 'globalState/contactForm/index'
+import { SectionRefsForScrollContext } from 'globalState/sectionRefsForScroll/index'
 import JoiEmailSchema from 'models/JoiEmailSchema'
+import SuccessfulSend from 'components/contact/successfulSend'
 const Joi = require('joi')
 
 function Contact() {
 
     // global state
     const {xxs,xs,sm,md,lg,xl} = useContext(ScreenSizesContext)
-    const {email,changeValidationStatus,updateField} = useContext(ContactFormContext)
+    const {email,changeValidationStatus,updateField,isSent,setIsSent} = useContext(ContactFormContext)
+    const {updateRefs} = useContext(SectionRefsForScrollContext)
+
+    // refs
+    const contact = useRef()
+
+    // update ref for programmatic scroll
+    useEffect(() => updateRefs({contact}), [])
 
     const handleSubmit = async e => {
         e.preventDefault()
 
         const {error} = Joi.validate(email,JoiEmailSchema, {'abortEarly':false})
-        if (error) return changeValidationStatus(error.details.map(error => error.message))
+        if (error) return changeValidationStatus(error.details.map(error => error.message), true)
 
         const res = await fetchContactEmail(email)
-        console.log(res.status)
+        if (res.status === 200) setIsSent(true)
     }
 
+    if (isSent) return <SuccessfulSend />
+
     return (
-        <StyledContainer>
+        <StyledContainer ref={contact}>
             <Col center style={{'alignItems':'center'}} >
                 <StyledHeader>Contact</StyledHeader>
                 <StyledEmailForm

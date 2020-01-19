@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const StyledContainer = styled.div`
     display: flex;
     height: 100vh;
+    min-height: 600px;
     color: ${props => props.theme.textMain};
-    border: 1px solid white;
 `
 
 export const StyledEmailForm = styled.form`
@@ -74,4 +74,13 @@ export const StyledSendButton = styled.button`
 export const StyledSendButtonContainer = styled.div`
     display: flex;
     justify-content: center;
+`
+
+export const StyledText = styled.p`
+    width: 280px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
 `

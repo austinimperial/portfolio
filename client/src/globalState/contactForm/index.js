@@ -10,6 +10,7 @@ function ContactFormProvider({children}) {
     }
 
     const [email,setEmail] = useState(initialEmail)
+    const [isSent,setIsSent] = useState(false)
 
     const updateField = (field,changes) => {
         setEmail(prevEmail => {
@@ -18,16 +19,18 @@ function ContactFormProvider({children}) {
         })
     }
 
-    const changeValidationStatus = (fieldArray) => {
+    const changeValidationStatus = (fieldArray,newStatus) => {
         fieldArray.forEach(field => {
-            updateField(field,{invalid:true})
+            updateField(field,{invalid:newStatus})
         })
     }
 
     const value = {
         email,
         changeValidationStatus,
-        updateField
+        updateField,
+        isSent,
+        setIsSent
     }
 
     return (

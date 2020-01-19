@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const StyledContainer = styled.div`
     display: flex;
     height: 90vh;
+    min-height: 350px;
     color: ${props => props.theme.textMain};
-    border: 1px solid white;
 `
 
 export const StyledBigText = styled.p`

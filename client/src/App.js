@@ -10,12 +10,14 @@ import mainTheme from 'styles/mainTheme'
 import { StyledAppContainer } from './styles/AppStyles'
 import ScreenSizesProvider from 'globalState/screenSizes'
 import ContactFormProvider from 'globalState/contactForm/index'
+import SectionRefsForScrollProvider from 'globalState/sectionRefsForScroll/index'
 
 function App() {
    return (
       <ThemeProvider theme={mainTheme}>
       <ScreenSizesProvider>
       <ContactFormProvider>
+      <SectionRefsForScrollProvider>
             <StyledAppContainer>
                <Header />
                <Intro />
@@ -24,6 +26,7 @@ function App() {
                <Contact />
                <Footer />
             </StyledAppContainer>
+      </SectionRefsForScrollProvider>
       </ContactFormProvider>
       </ScreenSizesProvider>
       </ThemeProvider>
