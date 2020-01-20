@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col } from 'components/layout/index'
-import AustinLogo from 'components/intro/AustinLogo'
+import { ReactSVG } from 'react-svg'
+import tagSmash from 'images/tagSmash.svg'
 import {
     StyledContainer,
     StyledBigText,
@@ -28,7 +29,7 @@ function Intro() {
                 </div>
             </Col>
             <Col style={{'flexBasis':'40%'}} center >
-                <AustinLogo height="200px" />
+                <ReactSVG src={tagSmash} />
             </Col>
         </StyledContainer>
     )

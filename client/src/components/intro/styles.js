@@ -43,4 +43,10 @@ export const StyledResumeButton = styled.button`
     padding: 5px 15px 5px 15px;
     margin: 10px 0px 0px 0px;
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    :hover {
+        background-color: ${props => props.theme.textMain};
+        color: ${props => props.theme.bgMain};
+    }
 `

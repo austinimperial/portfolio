@@ -3,7 +3,7 @@ import './linkedInLogo.css'
 
 function LinkedInLogo({className,href}) {
     return (   
-        <div>
+        <div className="wrapper" >
             <a href={href} target="_blank">
                 <svg 
                     role="img" 

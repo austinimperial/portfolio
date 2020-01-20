@@ -3,7 +3,7 @@ import './githubLogo.css'
 
 function GitHubLogo({className,href}) {
     return (
-        <div>
+        <div className="wrapper" >
             <a href={href} target="_blank">
                 <svg 
                     role="img" 

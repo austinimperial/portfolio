@@ -1,7 +1,7 @@
 .projectCard {
     height: 40px;
     fill: white;
-    transition: all 0.18s ease-in-out;
+    transition: all 0.1s ease-in-out;
     cursor: pointer;
 }
 
@@ -15,9 +15,17 @@
     fill: white;
     transition: all 0.18s ease-in-out;
     cursor: pointer;
-    margin: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 .footer:hover {
     height: 35px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
 }

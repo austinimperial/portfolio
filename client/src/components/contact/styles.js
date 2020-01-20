@@ -68,7 +68,14 @@ export const StyledSendButton = styled.button`
     min-width: 0;
     color: ${props => props.theme.textMain};
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
     margin: 15px 0px 0px 0px;
+    transition: all 0.15s ease-in-out;
+
+    :hover {
+        background-color: ${props => props.theme.textMain};
+        color: ${props => props.theme.bgMain};
+    }
 `
 
 export const StyledSendButtonContainer = styled.div`
