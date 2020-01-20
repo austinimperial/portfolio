@@ -42,4 +42,5 @@ export const StyledResumeButton = styled.button`
     color: ${props => props.theme.textMain};
     padding: 5px 15px 5px 15px;
     margin: 10px 0px 0px 0px;
+    cursor: pointer;
 `

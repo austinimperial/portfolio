@@ -28,7 +28,7 @@ export const StyledTextArea = styled.textarea`
     box-sizing: border-box;
 
     ${props => props.small && `
-        height: 50vh;
+        height: 35vh;
         width: 100%;
     `}
 

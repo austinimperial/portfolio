@@ -9,6 +9,7 @@ import {
     StyledResumeButton
 } from './styles'
 import blurb from './blurb'
+import resume from 'resume/resume.pdf'
 
 function Intro() {
     return (
@@ -21,7 +22,9 @@ function Intro() {
                     {blurb}
                 </StyledBlurb>
                 <div style={{'display':'flex'}}>
-                    <StyledResumeButton>resume</StyledResumeButton>
+                    <a href={resume} target='_blank'>
+                        <StyledResumeButton>resume</StyledResumeButton>
+                    </a>
                 </div>
             </Col>
             <Col style={{'flexBasis':'40%'}} center >

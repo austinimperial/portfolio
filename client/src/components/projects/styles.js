@@ -12,4 +12,5 @@ export const StyledProjectCardContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    min-height: 400px;
 `

@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
-import { StyledContainer } from './styles'
+import { StyledContainer, StyledNavButtonContainer, StyledLogoContainer } from './styles'
 import { StyledNavButton } from 'components/shared/sharedStyles'
 import { SectionRefsForScrollContext } from 'globalState/sectionRefsForScroll'
+import GitHubLogo from 'components/shared/githubLogo/githubLogo.js'
+import LinkedInLogo from 'components/footer/linkedInLogo/LinkedInLogo'
 
 function Footer() {
 
@@ -10,23 +12,32 @@ function Footer() {
 
     return (
         <StyledContainer>
-            <StyledNavButton
-                onClick={() => window.scroll({top:0,behavior:'smooth'})}
-            >
-                back to top
-            </StyledNavButton>
 
-            <StyledNavButton
-                onClick={() => scrollToSection('projects')}
-            >
-                projects
-            </StyledNavButton>
+            <StyledLogoContainer>
+                <GitHubLogo className='footer' href="https://github.com/austinimperial?tab=repositories" />
+                <LinkedInLogo className='footer' href="https://www.linkedin.com/in/austinimperial/" />
+            </StyledLogoContainer>
 
-            <StyledNavButton
-                onClick={() => scrollToSection('skills')}
-            >
-                skills
-            </StyledNavButton>
+            <StyledNavButtonContainer>
+                <StyledNavButton
+                    onClick={() => window.scroll({top:0,behavior:'smooth'})}
+                >
+                    back to top
+                </StyledNavButton>
+
+                <StyledNavButton
+                    onClick={() => scrollToSection('projects')}
+                >
+                    projects
+                </StyledNavButton>
+
+                <StyledNavButton
+                    onClick={() => scrollToSection('skills')}
+                >
+                    skills
+                </StyledNavButton>                
+            </StyledNavButtonContainer>
+
         </StyledContainer>
     )
 }

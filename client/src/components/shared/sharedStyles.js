@@ -4,7 +4,7 @@ export const StyledHeader = styled.p`
     font-family: Montserrat;
     font-weight: 900;
     font-size: 60px;
-    margin: 0;
+    margin: 0px 0px 20px 0px;
     color: white;
     text-align: center;
 `

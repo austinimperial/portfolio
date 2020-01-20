@@ -1,0 +1,23 @@
+.projectCard {
+    height: 40px;
+    fill: white;
+    transition: all 0.18s ease-in-out;
+    cursor: pointer;
+}
+
+.projectCard:hover {
+    height: 50px;
+    fill: tomato;
+}
+
+.footer {
+    height: 30px;
+    fill: white;
+    transition: all 0.18s ease-in-out;
+    cursor: pointer;
+    margin: 0px 10px 0px 10px;
+}
+
+.footer:hover {
+    height: 35px;
+}
