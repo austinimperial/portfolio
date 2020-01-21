@@ -6,6 +6,7 @@ require('dotenv').config()
 const joiEmailSchema = require('../models/joiEmailSchema')
 
 router.post('/', async (req,res) => {
+    console.log('got it')
 
     const {error} = Joi.validate(req.body,joiEmailSchema)
     if (error) return res.sendStatu(400)

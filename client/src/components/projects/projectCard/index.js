@@ -21,7 +21,7 @@ function ProjectCard({label,blurb,img,imgLink,githubLink,techUsed}) {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
         >
-            <a href={imgLink} target="_blank" >
+            <a href={imgLink} target="_blank" rel="noopener noreferrer" >
                 <StyledImg 
                     src={img} 
                     isHovering={isHovering}

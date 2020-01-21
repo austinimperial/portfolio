@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
     display: flex;
-    height: 90vh;
+    min-height: 90vh;
     min-height: 350px;
     color: ${props => props.theme.textMain};
 `
@@ -49,4 +49,9 @@ export const StyledResumeButton = styled.button`
         background-color: ${props => props.theme.textMain};
         color: ${props => props.theme.bgMain};
     }
+`
+
+export const StyledTagSmashContainer = styled.div`
+    display: flex;
+    justify-content: center;
 `

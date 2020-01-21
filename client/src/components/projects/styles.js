@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
     display: flex;
-    height: 90vh;
-    min-height: 400px;
+    min-height: 90vh;
     color: ${props => props.theme.textMain};
 `
 

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bd3ba2bb.chunk.css",
+    "main.js": "/static/js/main.f8e32090.chunk.js",
+    "main.js.map": "/static/js/main.f8e32090.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7b61e083.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7b61e083.js.map",
+    "static/js/2.2f6fc07b.chunk.js": "/static/js/2.2f6fc07b.chunk.js",
+    "static/js/2.2f6fc07b.chunk.js.map": "/static/js/2.2f6fc07b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9f636ff3f372d0bf244d3c8d275890d5.js": "/precache-manifest.9f636ff3f372d0bf244d3c8d275890d5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.bd3ba2bb.chunk.css.map": "/static/css/main.bd3ba2bb.chunk.css.map",
+    "static/js/2.2f6fc07b.chunk.js.LICENSE": "/static/js/2.2f6fc07b.chunk.js.LICENSE",
+    "static/media/git.svg": "/static/media/git.b73214e3.svg",
+    "static/media/jwt.svg": "/static/media/jwt.3a6cea37.svg",
+    "static/media/mealTrackerScreenshot.png": "/static/media/mealTrackerScreenshot.21fa52b0.png",
+    "static/media/mongodb.svg": "/static/media/mongodb.8f2548d5.svg",
+    "static/media/node.svg": "/static/media/node.e1d7fcc9.svg",
+    "static/media/react.svg": "/static/media/react.092e0882.svg",
+    "static/media/reactrouter.svg": "/static/media/reactrouter.264b63ab.svg",
+    "static/media/resume.pdf": "/static/media/resume.567567a4.pdf",
+    "static/media/styledComponents.svg": "/static/media/styledComponents.af4fcf77.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b61e083.js",
+    "static/js/2.2f6fc07b.chunk.js",
+    "static/css/main.bd3ba2bb.chunk.css",
+    "static/js/main.f8e32090.chunk.js"
+  ]
+}

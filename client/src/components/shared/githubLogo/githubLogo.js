@@ -4,7 +4,7 @@ import './githubLogo.css'
 function GitHubLogo({className,href}) {
     return (
         <div className="wrapper" >
-            <a href={href} target="_blank">
+            <a href={href} target="_blank" rel="noopener noreferrer">
                 <svg 
                     role="img" 
                     viewBox="0 0 24 24" 
