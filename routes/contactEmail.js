@@ -1,45 +1,31 @@
 const express = require('express')
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail')
 const router = express.Router()
 const Joi = require('joi')
 require('dotenv').config()
 const joiEmailSchema = require('../models/joiEmailSchema')
 
 router.post('/', async (req,res) => {
-    console.log('got it')
 
     const {error} = Joi.validate(req.body,joiEmailSchema)
     if (error) return res.sendStatus(400)
 
     const {name,email,subject,message} = req.body
     
-    const transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: `${process.env.contact_email_user}`,
-            pass: `${process.env.contact_email_pass}`
-        }
-    });
+    try {
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        const msg = {
+            to: `${process.env.CONTACT_EMAIL_DESTINATION}`,
+            from: email.text,
+            subject: subject.text,
+            text: `${name.text} says: ${message.text}`,
+            html: '<strong>sendgrid</strong>',
+        };
 
-    const mailOptions = {
-        from: `${process.env.contact_email_user}`,
-        to: `${process.env.contact_email_destination}`,
-        subject: subject.text,
-        text: `
-            name: ${name.text} 
-            email: ${email.text} 
-            message: ${message.text}
-        `
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            res.send(error)
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
+        sgMail.send(msg);        
+    } catch(err) {
+        console.log(err)
+    }
 
     res.sendStatus(200)
 })
