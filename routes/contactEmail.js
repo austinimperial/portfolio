@@ -9,7 +9,7 @@ router.post('/', async (req,res) => {
     console.log('got it')
 
     const {error} = Joi.validate(req.body,joiEmailSchema)
-    if (error) return res.sendStatu(400)
+    if (error) return res.sendStatus(400)
 
     const {name,email,subject,message} = req.body
     
