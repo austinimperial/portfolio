@@ -1,9 +1,10 @@
-import React from 'react'
-import { ReactSVG } from 'react-svg'
+import React, { useContext } from 'react'
+import { ScreenSizesContext } from 'globalState/screenSizes/index'
 import {
-    StyledContainer
+    StyledContainer,
 } from './styles'
-import './hover.css'
+import SmallLogoWrapper from './smallLogoWrapper/index'
+import BigLogoWraper from './bigLogoWrapper/index'
 
 const skills = [
     {label:"Styled Components", src: require('./images/styledComponents.svg')},
@@ -15,42 +16,67 @@ const skills = [
     {label:"JSON Web Token", src: require('./images/jwt.svg')}
 ]
 
+// two images, 'styled components', and 'jwt' have different aspect ratio than the rest of them,
+// and so are treated separately.
+
 function SkillIcons({setCurrentSkill}) {
-    return (
-        <StyledContainer>
-                <ReactSVG
-                    src={skills[0].src}
-                    beforeInjection={svg => {
-                        svg.classList.add('styledComponents')
-                    }}
-                    onMouseEnter={() => setCurrentSkill(skills[0].label)}
-                    onMouseLeave={() => setCurrentSkill("")}
-                />               
-            {
-                skills.slice(1,skills.length-1).map(skill => {
-                    return (
-                        <ReactSVG
-                            key={skill.src}
-                            src={skill.src}
-                            beforeInjection={svg => {
-                                svg.classList.add('regular')
-                            }}
-                            onMouseEnter={() => setCurrentSkill(skill.label)}
-                            onMouseLeave={() => setCurrentSkill("")}
-                        />
-                    )
-                })
-            }
-            <ReactSVG
-                src={skills[skills.length-1].src}
-                beforeInjection={svg => {
-                    svg.classList.add('jwt')
-                }}
-                onMouseEnter={() => setCurrentSkill(skills[skills.length-1].label)}
-                onMouseLeave={() => setCurrentSkill("")}
-            />
-        </StyledContainer>
-    )
+
+    // global state
+    const {xxs,xs,sm,md,lg,xl} = useContext(ScreenSizesContext)
+
+
+    // on small screens, there is no hover/click feature, and the label is static
+    if (xxs) {
+        return (
+            <StyledContainer>
+                <SmallLogoWrapper skill={skills[0]} oneClass="styledComponentsSmall" />            
+                {
+                    skills.slice(1,skills.length-1).map(skill => {
+                        return (
+                            <SmallLogoWrapper 
+                                skill={skill} 
+                                key={skill.src}
+                                oneClass="regularSmall"
+                                />
+                        )
+                    })
+                }
+                <SmallLogoWrapper skill={skills[skills.length-1]} oneClass="jwtSmall"/>
+            </StyledContainer>
+        )
+    }
+
+    // on big screens, there's a hover effect, and the label (not shown in this component) is dynamic
+    if (xs || sm || md || lg || xl) {
+        return (
+            <StyledContainer>
+                <BigLogoWraper 
+                    skill={skills[0]} 
+                    setCurrentSkill={setCurrentSkill} 
+                    oneClass='styledComponents'
+                />
+                {
+                    skills.slice(1,skills.length-1).map(skill => {
+                        return (
+                            <BigLogoWraper 
+                                key={skill.src}
+                                setCurrentSkill={setCurrentSkill}
+                                oneClass='regular'
+                                skill={skill}
+                            />
+                        )
+                    })
+                }
+                <BigLogoWraper 
+                    skill={skills[skills.length-1]}
+                    setCurrentSkill={setCurrentSkill}
+                    oneClass='jwt'
+                />
+            </StyledContainer>
+        )        
+    }
+
 }
 
 export default React.memo(SkillIcons)
+

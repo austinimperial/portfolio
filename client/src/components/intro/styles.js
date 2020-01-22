@@ -14,6 +14,10 @@ export const StyledBigText = styled.p`
     margin: 0;
     text-shadow: 5px 5px #00595c;
 
+    ${props => props.small && `
+        padding: 0% 5% 0% 5%;
+    `}
+
     ${props => props.highlighted && `
         color: white;
     `}
@@ -24,10 +28,16 @@ export const StyledBigTextSpan = styled.span`
 `
 
 export const StyledBlurb = styled.p`
+    width: 100%;
+    min-width: 0;
     font-family: Montserrat;
     font-weight: 500;
     font-size: 16px;
-    margin: 0;
+    box-sizing: border-box;
+
+    ${props => props.small && `
+        padding: 0% 5% 0% 5%;
+    `}
 `
 
 export const StyledResumeButton = styled.button`
@@ -49,9 +59,25 @@ export const StyledResumeButton = styled.button`
         background-color: ${props => props.theme.textMain};
         color: ${props => props.theme.bgMain};
     }
+
+    ${props => props.small && `
+        padding: 0% 5% 0% 5%;
+    `}
 `
 
 export const StyledTagSmashContainer = styled.div`
     display: flex;
     justify-content: center;
+
+    ${props => props.small && `
+        padding: 0% 5% 0% 5%;
+    `}
+`
+
+export const StyledButtonContainer = styled.div`
+    display: flex;
+
+    ${props => props.small && `
+        padding: 0% 5% 0% 5%;
+    `}
 `

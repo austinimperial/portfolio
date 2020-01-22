@@ -8,7 +8,8 @@ import {
     StyledBlurb,
     StyledBigTextSpan,
     StyledResumeButton,
-    StyledTagSmashContainer
+    StyledTagSmashContainer,
+    StyledButtonContainer
 } from './styles'
 import blurb from './blurb'
 import resume from 'resume/resume.pdf'
@@ -21,20 +22,20 @@ function Intro() {
     if (xxs || xs || sm) {
         return (
             <StyledContainer>
-                <Col style={{'flexBasis':'50%','padding':'0% 5% 0% 5%'}} center >
-                    <StyledBigText>
+                <Col style={{'width':'100%'}} center >
+                    <StyledBigText small >
                         Hello! I'm <StyledBigTextSpan>Austin</StyledBigTextSpan>
                     </StyledBigText>
-                    <StyledBlurb>
+                    <StyledBlurb small >
                         {blurb}
                     </StyledBlurb>
-                    <div style={{'display':'flex'}}>
+                    <StyledButtonContainer small >
                         <a href={resume} target='_blank' rel="noopener noreferrer" >
                             <StyledResumeButton>resume</StyledResumeButton>
                         </a>
-                    </div>
-                    <StyledTagSmashContainer>
-                        <TagSmash height='50vh'/>
+                    </StyledButtonContainer>
+                    <StyledTagSmashContainer small >
+                        <TagSmash width='100%' />
                     </StyledTagSmashContainer>
                 </Col>
             </StyledContainer>
@@ -51,11 +52,11 @@ function Intro() {
                     <StyledBlurb>
                         {blurb}
                     </StyledBlurb>
-                    <div style={{'display':'flex'}}>
+                    <StyledButtonContainer>
                         <a href={resume} target='_blank' rel="noopener noreferrer" >
                             <StyledResumeButton>resume</StyledResumeButton>
                         </a>
-                    </div>
+                    </StyledButtonContainer>
                 </Col>
                 <Col style={{'flexBasis':'50%','padding':'0% 5% 0% 5%'}} center >
                     <TagSmash />

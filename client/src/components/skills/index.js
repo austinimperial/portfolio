@@ -6,6 +6,7 @@ import {
 } from './styles'
 import { StyledHeader } from 'components/shared/sharedStyles'
 import { SectionRefsForScrollContext } from 'globalState/sectionRefsForScroll/index'
+import { ScreenSizesContext } from 'globalState/screenSizes/index'
 import {Col} from 'components/layout/index'
 import SkillIcons from 'components/skills/skillIcons/index'
 
@@ -16,6 +17,9 @@ function Skills() {
     const skills = useRef()
     useEffect(() => updateRefs({skills}),[])
 
+    // other global state
+    const {xxs} = useState(ScreenSizesContext)
+
     // local state 
     const [currentSkill,setCurrentSkill] = useState("")
 
@@ -25,7 +29,7 @@ function Skills() {
                 <StyledHeader>What do I use?</StyledHeader>
                 <StyledRegText>I have experience with the following tools and technologies:</StyledRegText>
                 <SkillIcons setCurrentSkill={setCurrentSkill}/>
-                <StyledSkillLabel>{currentSkill}</StyledSkillLabel>
+                {!xxs && <StyledSkillLabel>{currentSkill}</StyledSkillLabel>}
             </Col>
         </StyledContainer>
     )
