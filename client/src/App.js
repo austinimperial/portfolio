@@ -5,6 +5,7 @@ import Skills from 'components/skills/index'
 import Projects from 'components/projects/index'
 import Contact from 'components/contact/index'
 import Footer from 'components/footer/index'
+import About from 'components/about/index'
 import { ThemeProvider } from 'styled-components'
 import mainTheme from 'styles/mainTheme'
 import { StyledAppContainer } from './styles/AppStyles'
@@ -23,6 +24,7 @@ function App() {
                <Intro />
                <Skills />
                <Projects />
+               <About />
                <Contact />
                <Footer />
             </StyledAppContainer>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledHeader = styled.p`
     font-family: Montserrat;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 55px;
     margin: 0px 0px 20px 0px;
     color: white;
     text-align: center;

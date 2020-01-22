@@ -1,9 +1,9 @@
 const mainTheme = {
-    bgMain: "#000026",
-    textMain: "#00ecf0",
+    bgMain: "#0d0a3d",
+    textMain: "#1bf1f5",
     fontMain: "Montserrat",
     danger:"#e80049",
-    bgDark:"#0b0100"
+    bgDark:"#04021f"
 }
 
 export default mainTheme

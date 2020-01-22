@@ -6,7 +6,8 @@ function SectionRefsForScrollProvider ({children}) {
         contact:null,
         intro:null,
         projects:null,
-        skills:null
+        skills:null,
+        about:null
     })
 
     const scrollToSection = (section) => {
