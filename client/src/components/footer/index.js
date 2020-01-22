@@ -22,7 +22,7 @@ function Footer() {
                 <StyledNavButton
                     onClick={() => window.scroll({top:0,behavior:'smooth'})}
                 >
-                    back to top
+                    top
                 </StyledNavButton>
 
                 <StyledNavButton

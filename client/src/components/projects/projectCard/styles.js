@@ -11,12 +11,15 @@ export const StyledLabelText = styled.p`
     font-family: Montserrat;
     font-weight: 500;
     font-size: 23px;
-    margin: 0;
     color: white;
     text-align: center;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
     transition: color 0.18s ease-in-out;
     transition: font-size 0.18s ease-in-out;
+
+    ${props => props.small && `
+        margin: 0px 15px 0px 0px;
+    `}
 
     ${props => props.isHovering && `
         font-size: 27px;
@@ -25,11 +28,18 @@ export const StyledLabelText = styled.p`
 
 export const StyledImg = styled.img`
     cursor: pointer;
-    height: 200px;
-    transition: all 0.18s ease-in-out;
+
+    ${props => props.big && `
+        height: 200px;
+        transition: all 0.18s ease-in-out;    
+    `}
 
     ${props => props.isHovering && `
         height: 210px;
+    `}
+
+    ${props => props.small && `
+        width: 100%;
     `}
 `
 
