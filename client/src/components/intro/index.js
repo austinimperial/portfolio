@@ -51,7 +51,7 @@ function Intro() {
                     </StyledBlurb>
                     <StyledButtonContainer>
                         <a href={resume} target='_blank' rel="noopener noreferrer" >
-                            <StyledResumeButton>resume</StyledResumeButton>
+                            <StyledResumeButton big >resume</StyledResumeButton>
                         </a>
                     </StyledButtonContainer>
                 </Col>

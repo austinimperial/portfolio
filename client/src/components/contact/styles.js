@@ -65,17 +65,21 @@ export const StyledSendButton = styled.button`
     font-weight: 500;
     font-size: 16px;
     background-color: transparent;
-    min-width: 0;
+    min-width: 80px;
     color: ${props => props.theme.textMain};
     padding: 5px 15px 5px 15px;
     cursor: pointer;
     margin: 15px 0px 0px 0px;
     transition: all 0.15s ease-in-out;
 
-    :hover {
-        background-color: ${props => props.theme.textMain};
-        color: ${props => props.theme.bgMain};
-    }
+    --text-main: ${props => props.theme.textMain};
+    --bg-main: ${props => props.theme.bgMain};
+    ${props => props.big && `
+        :hover {
+            background-color: var(--text-main);
+            color: var(--bg-main);
+        }    
+    `}
 `
 
 export const StyledSendButtonContainer = styled.div`

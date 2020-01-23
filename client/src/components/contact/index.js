@@ -80,7 +80,12 @@ function Contact() {
                         big={md || lg || xl}   
                     />
                     <StyledSendButtonContainer>
-                        <StyledSendButton type="submit" >Send</StyledSendButton> 
+                        <StyledSendButton 
+                            type="submit" 
+                            big={md || lg || xl} 
+                        >
+                            Send
+                        </StyledSendButton> 
                     </StyledSendButtonContainer>
                 </StyledEmailForm>
             </Col>
