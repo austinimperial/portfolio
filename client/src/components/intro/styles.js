@@ -5,6 +5,14 @@ export const StyledContainer = styled.div`
     min-height: 90vh;
     min-height: 350px;
     color: ${props => props.theme.textMain};
+
+    ${props => props.small && `
+        min-height: 700px;
+    `}
+
+    ${props => props.big && `
+        min-height: 480px;
+    `}
 `
 
 export const StyledBigText = styled.p`

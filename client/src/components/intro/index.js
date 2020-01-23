@@ -21,8 +21,8 @@ function Intro() {
 
     if (xxs || xs || sm) {
         return (
-            <StyledContainer>
-                <Col style={{'width':'100%'}} center >
+            <StyledContainer small >
+                <Col style={{'width':'100%'}} >
                     <StyledBigText small >
                         Hello! I'm <StyledBigTextSpan>Austin</StyledBigTextSpan>
                     </StyledBigText>
@@ -34,9 +34,6 @@ function Intro() {
                             <StyledResumeButton>resume</StyledResumeButton>
                         </a>
                     </StyledButtonContainer>
-                    <StyledTagSmashContainer small >
-                        <TagSmash width='100%' />
-                    </StyledTagSmashContainer>
                 </Col>
             </StyledContainer>
         )   
@@ -44,7 +41,7 @@ function Intro() {
 
     if (md || lg || xl) {
         return (
-            <StyledContainer>
+            <StyledContainer big >
                 <Col style={{'flexBasis':'50%','padding':'0% 0% 0% 5%'}} center >
                     <StyledBigText>
                         Hello! I'm <StyledBigTextSpan>Austin</StyledBigTextSpan>
@@ -59,12 +56,11 @@ function Intro() {
                     </StyledButtonContainer>
                 </Col>
                 <Col style={{'flexBasis':'50%','padding':'0% 5% 0% 5%'}} center >
-                    <TagSmash />
+
                 </Col>
             </StyledContainer>
         )        
     }
-
 }
 
 export default Intro
