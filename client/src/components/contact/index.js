@@ -38,7 +38,6 @@ function Contact() {
         if (error) return changeValidationStatus(error.details.map(error => error.message), true)
 
         const res = await fetchContactEmail(email)
-        console.log(res)
         if (res.status === 200) setIsSent(true)
     }
 

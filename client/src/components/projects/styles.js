@@ -4,6 +4,8 @@ export const StyledContainer = styled.div`
     display: flex;
     min-height: 90vh;
     color: ${props => props.theme.textMain};
+    padding-bottom: 20px;
+    box-sizing: border-box;
 `
 
 export const StyledProjectCardContainer = styled.div`

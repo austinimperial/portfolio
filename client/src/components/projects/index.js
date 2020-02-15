@@ -8,7 +8,8 @@ import { StyledHeader } from 'components/shared/sharedStyles'
 import { SectionRefsForScrollContext } from 'globalState/sectionRefsForScroll/index'
 import ProjectCard from 'components/projects/projectCard/index'
 import mealTrackerScreenShot from 'images/mealTrackerScreenshot.png'
-import { mealTrackerBlurb } from 'components/projects/blurbs'
+import quickBlobScreenShot from 'images/quickBlobScreenShot.png'
+import { mealTrackerBlurb, quickBlobBlurb } from 'components/projects/blurbs'
 
 function Projects() {
 
@@ -30,6 +31,15 @@ function Projects() {
                         imgLink='http://meal-tracker-test-2121.herokuapp.com/'
                         githubLink='https://github.com/austinimperial/meal_tracker'
                         techUsed={['React, styled-components, Node, Express, react-router, mongoDB, JWT']}
+                    />
+
+                    <ProjectCard 
+                        label="quick-blob-svg" 
+                        img={quickBlobScreenShot}
+                        blurb={quickBlobBlurb}
+                        imgLink='https://quick-blob-svg.herokuapp.com/'
+                        githubLink='https://github.com/austinimperial/quick-blob-svg'
+                        techUsed={['React, styled-components, svg']}
                     />
                     
                 </StyledProjectCardContainer>

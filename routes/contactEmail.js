@@ -19,7 +19,7 @@ router.post('/', async (req,res) => {
             from: email.text,
             subject: subject.text,
             text: `${name.text} says: ${message.text}`,
-            html: '<strong>sendgrid</strong>',
+            html: '<p>{}</p>',
         };
 
         sgMail.send(msg);        
