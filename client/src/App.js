@@ -13,6 +13,7 @@ import { StyledAppContainer } from './styles/AppStyles'
 import ScreenSizesProvider from 'globalState/screenSizes'
 import ContactFormProvider from 'globalState/contactForm/index'
 import SectionRefsForScrollProvider from 'globalState/sectionRefsForScroll/index'
+import TouchScreenDetectionProvider from 'globalState/touchScreenDetection/index'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <ScreenSizesProvider>
       <ContactFormProvider>
       <SectionRefsForScrollProvider>
+      <TouchScreenDetectionProvider>
                <StyledAppContainer>
                   <TagSmashParallax>
                      <Header />
@@ -32,6 +34,7 @@ function App() {
                      <Footer />
                   </TagSmashParallax>
                </StyledAppContainer>
+      </TouchScreenDetectionProvider>
       </SectionRefsForScrollProvider>
       </ContactFormProvider>
       </ScreenSizesProvider>

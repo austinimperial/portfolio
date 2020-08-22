@@ -10,17 +10,19 @@ import {
     StyledBlurbSpan
 } from './styles'
 import { ScreenSizesContext } from 'globalState/screenSizes/index'
+import { TouchScreenDetectionContext } from 'globalState/touchScreenDetection/index'
 import GitHubLogo from 'components/shared/githubLogo/githubLogo'
 
 function ProjectCard({label,blurb,img,imgLink,githubLink,techUsed}) {
 
     //global state
     const {xxs,xs,sm,md,lg,xl} = useContext(ScreenSizesContext)
+    const { isTouchScreen } = useContext(TouchScreenDetectionContext)
 
     // local state
     const [isHovering,setIsHovering] = useState(false)
 
-    if (xxs || xs) {
+    if (xxs || xs || isTouchScreen) {
         return (
             <StyledContainer>
                 <a href={imgLink} target="_blank" rel="noopener noreferrer" >
