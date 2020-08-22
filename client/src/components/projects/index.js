@@ -9,7 +9,8 @@ import { SectionRefsForScrollContext } from 'globalState/sectionRefsForScroll/in
 import ProjectCard from 'components/projects/projectCard/index'
 import mealTrackerScreenShot from 'images/mealTrackerScreenshot.png'
 import quickBlobScreenShot from 'images/quickBlobScreenShot.png'
-import { mealTrackerBlurb, quickBlobBlurb } from 'components/projects/blurbs'
+import bugHungScreenshot from 'images/bugHuntScreenshot.png'
+import { mealTrackerBlurb, quickBlobBlurb, bugHuntBlurb } from 'components/projects/blurbs'
 
 function Projects() {
 
@@ -25,21 +26,30 @@ function Projects() {
                 <StyledProjectCardContainer>
 
                     <ProjectCard 
-                        label="Meal Tracker" 
-                        img={mealTrackerScreenShot}
-                        blurb={mealTrackerBlurb}
-                        imgLink='http://meal-tracker-test-2121.herokuapp.com/'
-                        githubLink='https://github.com/austinimperial/meal_tracker'
-                        techUsed={['React, styled-components, Node, Express, react-router, mongoDB, JWT']}
-                    />
-
-                    <ProjectCard 
                         label="quick-blob-svg" 
                         img={quickBlobScreenShot}
                         blurb={quickBlobBlurb}
                         imgLink='https://quick-blob-svg.herokuapp.com/'
                         githubLink='https://github.com/austinimperial/quick-blob-svg'
                         techUsed={['React, styled-components, svg']}
+                    />
+
+                    <ProjectCard 
+                        label="Bug Hunt Camoflage" 
+                        img={bugHungScreenshot}
+                        blurb={bugHuntBlurb}
+                        imgLink='https://bug-hunt-camoflage.herokuapp.com/'
+                        githubLink='https://github.com/austinimperial/bug-hunt-camoflage'
+                        techUsed={['React, styled-components, svg']}
+                    />
+
+                    <ProjectCard 
+                        label="Meal Tracker" 
+                        img={mealTrackerScreenShot}
+                        blurb={mealTrackerBlurb}
+                        imgLink='http://meal-tracker-test-2121.herokuapp.com/'
+                        githubLink='https://github.com/austinimperial/meal_tracker'
+                        techUsed={['React, styled-components, Node, Express, react-router, mongoDB, JWT']}
                     />
                     
                 </StyledProjectCardContainer>

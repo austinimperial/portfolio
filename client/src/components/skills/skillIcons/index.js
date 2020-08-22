@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ScreenSizesContext } from 'globalState/screenSizes/index'
+import { TouchScreenDetectionContext } from 'globalState/touchScreenDetection/index'
 import {
     StyledContainer,
 } from './styles'
@@ -23,10 +24,10 @@ function SkillIcons({setCurrentSkill}) {
 
     // global state
     const {xxs,xs,sm,md,lg,xl} = useContext(ScreenSizesContext)
-
+    const { isTouchScreen } = useContext(TouchScreenDetectionContext)
 
     // on small screens, there is no hover/click feature, and the label is static
-    if (xxs) {
+    if (xxs || isTouchScreen) {
         return (
             <StyledContainer>
                 <SmallLogoWrapper skill={skills[0]} oneClass="styledComponentsSmall" />            
