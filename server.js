@@ -1,8 +1,11 @@
+const sslRedirect = require('heroku-ssl-redirect')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
 
+console.log(sslRedirect.default)
+app.use(sslRedirect.default());
 app.use(express.static(path.join(__dirname+'/client/build')));
 
 app.get('/', (req, res) => {

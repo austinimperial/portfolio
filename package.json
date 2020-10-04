@@ -18,6 +18,7 @@
     "concurrently": "^5.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "heroku-ssl-redirect": "^0.1.1",
     "http-proxy-middleware": "^0.20.0",
     "joi": "^14.3.1",
     "nodemailer": "^6.4.2",
